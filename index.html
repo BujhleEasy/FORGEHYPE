@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forge Hype | Elite Digital Media Agency UAE</title>
+    <!-- Modern Geometric Sans-serif Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -13,7 +14,8 @@
         :root[data-theme="dark"] {
             --bg-primary: #09090A; /* Absolute Matte Black */
             --bg-secondary: #111115;
-            --text-main: #FFFFFF; /* Stark White */
+            --bg-kinetic: #000000;  /* Pure Black for Dark Dynamic Row */
+            --text-main: #FFFFFF;  /* Stark White */
             --text-muted: #8E919A;
             
             /* Typography Highlight Vectors */
@@ -21,7 +23,7 @@
             --terminal-accent: #FFCCBC; /* Soft Pastel Peach */
             
             --accent-bg: #FF5722;
-            --accent-text: #09090A; /* High contrast context canvas matching */
+            --accent-text: #09090A; 
             
             /* Button B Configuration */
             --btn-secondary-bg: rgba(255, 255, 255, 0.08);
@@ -34,7 +36,8 @@
         :root[data-theme="light"] {
             --bg-primary: #FAFAFA; /* Pure Minimalist White */
             --bg-secondary: #FFFFFF;
-            --text-main: #0A0F18; /* Deep Charcoal / Midnight Black */
+            --bg-kinetic: #FFFFFF;  /* Adapts cleanly to light canvas environments */
+            --text-main: #0A0F18;  /* Deep Charcoal / Midnight Black */
             --text-muted: #64748B;
             
             /* Typography Highlight Vectors */
@@ -42,7 +45,7 @@
             --terminal-accent: #00B67A; /* Vivid Mint Green */
             
             --accent-bg: #FF5722;
-            --accent-text: #FFFFFF; /* High contrast context canvas matching */
+            --accent-text: #FFFFFF; 
             
             /* Button B Configuration */
             --btn-secondary-bg: rgba(10, 15, 24, 0.05);
@@ -84,18 +87,18 @@
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 80px; /* Desktop padding rules */
+            padding: 0 80px; 
         }
         
         @media (max-width: 768px) {
-            .container { padding: 0 24px; } /* Mobile baseline margin lock */
+            .container { padding: 0 24px; } 
         }
 
         section {
             padding: 120px 0; 
         }
 
-        /* NAVBAR Style (1-Line text logo without container) */
+        /* NAVBAR Style */
         nav {
             position: fixed;
             top: 0;
@@ -184,7 +187,6 @@
             width: 100%;
         }
 
-        /* 1. [Component: Video Card Container] Top of Stack */
         .hero-video-card-wrapper {
             width: 100%;
             max-width: 440px; 
@@ -211,11 +213,9 @@
             display: block;
         }
 
-        /* Spacers mapped to layout rules */
         .spacer-32 { height: 32px; width: 100%; }
         .spacer-24 { height: 24px; width: 100%; }
 
-        /* 2. [Component: Typography Section] */
         .hero-typography-align-block {
             width: 100%;
             max-width: 950px;
@@ -243,7 +243,6 @@
             .hero-typography-align-block p { font-size: 1.05rem; }
         }
 
-        /* 3. [Component: Capsule Button Row] Base Stack */
         .hero-capsule-row {
             width: 100%;
             max-width: 950px;
@@ -290,9 +289,9 @@
             background-color: rgba(255, 87, 34, 0.05);
         }
 
-        /* RE-ENGINEERED KINETIC ABOUT US SECTION (Zero Overlap Mechanics) */
+        /* FIXED KINETIC ABOUT US THEME MANAGER ADAPTATION */
         .kinetic-about-section {
-            background-color: #000000; 
+            background-color: var(--bg-kinetic); /* Bound explicitly to layout primitive tokens */
             padding: 140px 0; 
             text-align: center;
             border-top: 1px solid var(--border);
@@ -306,7 +305,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 16px; /* Explicit structural gap spacing to prevent overlapping */
+            gap: 16px; 
         }
 
         .kinetic-row {
@@ -318,10 +317,9 @@
         }
 
         .kinetic-row.line-top, .kinetic-row.line-bottom {
-            color: #FFFFFF; 
+            color: var(--text-main); /* Shifts fluidly from stark white to dark midnight charcoal */
         }
 
-        /* Strict Bounding Box Layout to Contain Phrases Intact */
         .kinetic-row.line-dynamic {
             color: #FF5722; 
             min-height: clamp(2.4rem, 4.5vw, 3.8rem); 
@@ -341,7 +339,6 @@
             justify-content: center;
         }
 
-        /* Absolute positioning isolation rules for smooth slide-up animation */
         .kinetic-phrase {
             position: absolute;
             opacity: 0;
@@ -356,14 +353,12 @@
                         visibility 0.5s ease;
         }
 
-        /* Active Phase State */
         .kinetic-phrase.active {
             opacity: 1;
             transform: translateY(0);
             visibility: visible;
         }
 
-        /* Outgoing Exit Phase State */
         .kinetic-phrase.exit {
             opacity: 0;
             transform: translateY(-30px);
@@ -671,6 +666,7 @@
 </head>
 <body>
 
+    <!-- [HEADER & NAVIGATION] -->
     <nav>
         <div class="container nav-container">
             <a href="#" class="brand-logo-text">Forge <span>hype</span></a>
@@ -691,10 +687,12 @@
         </div>
     </nav>
 
+    <!-- [01 HYBRID HERO SECTION BLOCK] -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-vertical-stack">
                 
+                <!-- Item 1: [Component: Video Card Container] Top-Aligned Format -->
                 <div class="hero-video-card-wrapper">
                     <div class="hero-video-container-portrait">
                         <video autoplay loop muted playsinline poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100%' height='100%' fill='%2309090A'/></svg>">
@@ -704,15 +702,19 @@
                     </div>
                 </div>
 
+                <!-- Item 2: [Vertical Spacer: 32px] -->
                 <div class="spacer-32"></div>
 
+                <!-- Item 3: [Component: Typography Section] Left-Aligned System Formulation -->
                 <div class="hero-typography-align-block">
                     <h1>We Build Brands that <span class="kw1">Solve</span> Critical Business <span class="kw2">Problems.</span></h1>
                     <p>From insight-driven trajectory optimization to explosive customer acquisition, we engineer high-performance conversion environments for industry leaders across the UAE.</p>
                 </div>
 
+                <!-- Item 4: [Vertical Spacer: 24px] -->
                 <div class="spacer-24"></div>
 
+                <!-- Item 5: [Component: Capsule Button Row] Horizontal Pill Architectures -->
                 <div class="hero-capsule-row">
                     <a href="#audit" class="capsule-btn btn-a-primary">Get Your Free Audit</a>
                     <a href="#cases" class="capsule-btn btn-b-secondary">See Our Work</a>
@@ -722,18 +724,20 @@
         </div>
     </section>
 
+    <!-- [FLUID KINETIC TYPOGRAPHY ABOUT US SECTION] -->
     <section class="kinetic-about-section">
         <div class="container">
             <div class="kinetic-text-engine">
                 <div class="kinetic-row line-top">Forge Hype provides a complete one-stop solution that handles your</div>
                 
+                <!-- Explicit Bounding Box Layout to Prevent Layout Shifts -->
                 <div class="kinetic-row line-dynamic">
                     <div class="kinetic-frame-box" id="kineticBoxContainer">
-                        <div class="kinetic-phrase active">Modern Web Design</div>
+                        <div class="kinetic-phrase active">Trending Media Kit</div>
                         <div class="kinetic-phrase">Strong Brand Identity</div>
                         <div class="kinetic-phrase">Effective Lead Growth</div>
                         <div class="kinetic-phrase">Powerful SEO Growth</div>
-                        <div class="kinetic-phrase">Premium Media Kit</div>
+                        <div class="kinetic-phrase">Premium Media Production</div>
                     </div>
                 </div>
                 
@@ -742,6 +746,7 @@
         </div>
     </section>
 
+    <!-- [02 RESULTS BAR / TRUST METRICS] -->
     <div class="trust-bar">
         <div class="container trust-grid">
             <div class="trust-title">Trusted by 50+ enterprise ecosystems</div>
@@ -762,6 +767,7 @@
         </div>
     </div>
 
+    <!-- [03 PAIN POINTS SECTION] -->
     <section id="why-us">
         <div class="container">
             <div class="section-header">
@@ -785,6 +791,7 @@
         </div>
     </section>
 
+    <!-- [04 SOLUTIONS / CORE SERVICES] -->
     <section id="services" style="background: rgba(var(--bg-secondary), 0.15);">
         <div class="container">
             <div class="section-header">
@@ -816,6 +823,7 @@
         </div>
     </section>
 
+    <!-- [05 CASE STUDIES SECTION] -->
     <section id="cases">
         <div class="container">
             <div class="section-header">
@@ -862,6 +870,7 @@
         </div>
     </section>
 
+    <!-- [06 WHY CHOOSE US] -->
     <section style="border-top: 1px solid var(--border); background: var(--bg-secondary);">
         <div class="container" style="text-align: center; max-width: 850px;">
             <div class="section-header" style="margin-bottom: 0;">
@@ -871,6 +880,7 @@
         </div>
     </section>
 
+    <!-- [07 PROCESS FRAMEWORK] -->
     <section id="process">
         <div class="container">
             <div class="section-header">
@@ -902,6 +912,7 @@
         </div>
     </section>
 
+    <!-- [08 TESTIMONIALS & 09 AUDIT CONVERSION SPLIT] -->
     <section id="audit" style="border-top: 1px solid var(--border);">
         <div class="container">
             <div class="split-layout">
@@ -943,6 +954,7 @@
         </div>
     </section>
 
+    <!-- [FOOTER MODULE] -->
     <footer>
         <div class="container footer-grid">
             <div>
@@ -958,6 +970,7 @@
         </div>
     </footer>
 
+    <!-- INTERACTIVE ENGINE SCRIPTS -->
     <script>
         const themeToggleBtn = document.getElementById('themeToggleBtn');
         const rootElement = document.documentElement;
@@ -978,29 +991,24 @@
         document.addEventListener("DOMContentLoaded", () => {
             const phrases = document.querySelectorAll(".kinetic-phrase");
             let currentIndex = 0;
-            const cycleDuration = 3000; // 3 seconds per service slide
+            const cycleDuration = 3000; 
 
             function rotateKineticPhrases() {
                 const currentPhrase = phrases[currentIndex];
-                // Mark current for exit tracking
                 currentPhrase.classList.remove("active");
                 currentPhrase.classList.add("exit");
 
-                // Calculate next index pointer parameters
                 currentIndex = (currentIndex + 1) % phrases.length;
                 const nextPhrase = phrases[currentIndex];
 
-                // Ensure incoming phrase is wiped clean of legacy transition residuals
                 nextPhrase.classList.remove("exit");
                 nextPhrase.classList.add("active");
 
-                // Clean exit classes once animation completes to clear structural state
                 setTimeout(() => {
                     currentPhrase.classList.remove("exit");
                 }, 600);
             }
 
-            // Run perpetual engine cycle loops
             setInterval(rotateKineticPhrases, cycleDuration);
         });
 
